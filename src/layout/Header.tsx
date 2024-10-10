@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 import IconBadge from "../components/IconBadge";
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLink = [
     {
