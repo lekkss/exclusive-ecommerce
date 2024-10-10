@@ -11,6 +11,7 @@ export default {
         black: "#01070A",
         text: "#FAFAFA",
         grey: "#7D8184",
+        grey2: "#AFAFAF",
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(270deg,#1b1429,#140f23)",

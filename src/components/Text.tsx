@@ -11,11 +11,13 @@ type TextProps = {
     | "error"
     | "success"
     | "text"
+    | "grey"
     | "black";
   className?: string;
 };
 
 const colorMap = {
+  grey: "text-grey2",
   text: "text-text",
   primary: "text-pry",
   secondary: "text-gray-600",
