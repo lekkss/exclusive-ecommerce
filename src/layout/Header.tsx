@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Text from "../components/Text";
 import InputButton from "../components/InputButton";
 import { Icon } from "@iconify/react";
+import IconBadge from "../components/IconBadge";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
@@ -79,14 +80,10 @@ const Header = () => {
                   placeholder="What are you looking for?"
                   icon="mynaui:search"
                 />
-                <Icon
-                  icon="ic:round-favorite-border"
-                  className="w-8 h-8 cursor-pointer text-black"
-                />
-                <Icon
-                  icon="ic:outline-shopping-cart"
-                  className="w-8 h-8 cursor-pointer text-black"
-                />
+
+                <IconBadge icon="ic:round-favorite-border" count={2} />
+                <IconBadge icon="ic:outline-shopping-cart" count={4} />
+
                 {/* Mobile Menu Toggle (Hamburger) */}
                 <div className="lg:hidden">
                   <Icon
@@ -131,7 +128,7 @@ const Header = () => {
       </header>
 
       {/* Page Content */}
-      <div className="pt-32">
+      <div className="pt-28">
         <Outlet />
       </div>
 
