@@ -4,6 +4,7 @@ import Text from "../components/Text";
 import qr from "../assets/qr.png";
 import apple from "../assets/apple.png";
 import google from "../assets/google.png";
+import InputButton from "../components/InputButton";
 const Footer = () => {
   const quickLink = [
     { name: "Privacy Policy", link: "" },
@@ -38,14 +39,7 @@ const Footer = () => {
                 Subscribe
               </Text>
               <Text size="base">Get 10% off your first order</Text>
-              <div className="flex items-center justify-between w-full border border-white p-3 rounded">
-                <input
-                  type="text"
-                  className="text-grey border-none bg-transparent outline-none"
-                  placeholder="Enter your email"
-                />
-                <Icon icon="akar-icons:send" className="w-6 h-6" />
-              </div>
+              <InputButton placeholder="Enter your email" />
             </div>
             <div className="flex flex-col md:w-1/6">
               <Text size="lg" weight="semibold">
