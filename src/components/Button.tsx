@@ -37,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
         ${color} ${textColor} ${paddingClasses[padding]} ${
         fullWidth ? "w-full" : "w-fit"
       } 
-        outline-none rounded h-14 flex items-center justify-center text-base font-normal
+        outline-none rounded h-14 flex items-center justify-center text-sm md:text-base font-normal
         ${className}
       `}
       onClick={onClick}

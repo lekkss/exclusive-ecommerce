@@ -1,4 +1,4 @@
-import Todays from "../../components/Todays";
+import Todays from "./Todays";
 import BestSeller from "./BestSeller";
 import Categories from "./Categories";
 
