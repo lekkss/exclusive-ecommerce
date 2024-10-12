@@ -32,13 +32,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="flex items-center justify-center relative bg-[#F5F5F5] p-4 md:py-10">
         {/* Tag (e.g. Discount) */}
         {product.tag === "discount" && product.discountType === "percent" ? (
-          <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-normal py-1 px-2 rounded">
+          <span className="absolute top-2 left-2 bg-pry text-white text-xs font-normal py-1 px-2 rounded">
             -{product.discount}%
           </span>
         ) : (
           product.tag !== "discount" &&
           product.tag !== null && (
-            <span className="absolute top-2 left-2 bg-pry text-white text-xs font-normal py-1 px-2 rounded">
+            <span className="absolute top-2 left-2 bg-green uppercase text-white text-xs font-normal py-1 px-2 rounded">
               {product.tag}
             </span>
           )
@@ -92,7 +92,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               </span>
             </>
           ) : (
-            <span className="text-black font-semibold text-lg">
+            <span className="text-pry font-semibold text-lg">
               ${product.price.toFixed(2)}
             </span>
           )}

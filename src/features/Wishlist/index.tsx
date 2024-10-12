@@ -10,7 +10,7 @@ const WishlistPage = () => {
   const wishlistItems = useSelector(selectWishlistItems);
   return (
     <div className="">
-      <div className="container mx-auto py-28 px-5">
+      <div className="container mx-auto py-28 px-3">
         <div className="flex items-center justify-between">
           <Text color="black" size="lg">
             Wishlist ({wishlist})

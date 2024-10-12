@@ -8,6 +8,16 @@ import north from "../assets/products/north-coat.png";
 import bag from "../assets/products/gucci-duffle-bag.png";
 import speaker from "../assets/products/rgb-liquid-cpu-cooler.png";
 import shelf from "../assets/products/small-bookshelf.png";
+
+import breed from "../assets/products/breed-dry-dog-food.png";
+import camera from "../assets/products/cano-eos.png";
+import asus from "../assets/products/asus-laptop.png";
+import curology from "../assets/products/curology.png";
+import car from "../assets/products/kids-electric-car.png";
+import boot from "../assets/products/jr-zoom-soccer-boot.png";
+import pad from "../assets/products/gp11-shhoter-usb.png";
+import jacket from "../assets/products/quitted-satin-jacket.png";
+
 import { Product } from "../components/types";
 export const flashSales: Product[] = [
   {
@@ -120,5 +130,104 @@ export const bestSeller: Product[] = [
     category: 2,
     discountType: null,
     price: 360,
+  },
+];
+
+export const products: Product[] = [
+  {
+    id: 54629,
+    name: "Breed Dry Dog Food",
+    image: breed,
+    rating: 3,
+    noUserRatings: 35,
+    discount: 0,
+    tag: null,
+    category: 7,
+    discountType: null,
+    price: 100,
+  },
+  {
+    id: 35279,
+    name: "CANON EOS DSLR Camera",
+    image: camera,
+    rating: 4,
+    noUserRatings: 95,
+    discount: 0,
+    tag: null,
+    category: 7,
+    discountType: null,
+    price: 360,
+  },
+  {
+    id: 63728,
+    name: "ASUS FHD Gaming Laptop",
+    image: asus,
+    rating: 5,
+    noUserRatings: 325,
+    discount: 0,
+    tag: null,
+    category: 7,
+    discountType: null,
+    price: 700,
+  },
+  {
+    id: 835363,
+    name: "Curology Product Set ",
+    image: curology,
+    rating: 3,
+    noUserRatings: 100,
+    discount: 0,
+    tag: null,
+    category: 7,
+    discountType: null,
+    price: 500,
+  },
+  {
+    id: 25378,
+    name: "Kids Electric Car",
+    image: car,
+    rating: 4,
+    noUserRatings: 45,
+    discount: 0,
+    tag: "new",
+    category: 7,
+    discountType: null,
+    price: 300,
+  },
+  {
+    id: 39912,
+    name: "Jr. Zoom Soccer Cleats",
+    image: boot,
+    rating: 4,
+    noUserRatings: 35,
+    discount: 0,
+    tag: null,
+    category: 7,
+    discountType: null,
+    price: 200,
+  },
+  {
+    id: 339930,
+    name: "GP11 Shooter USB Gamepad",
+    image: pad,
+    rating: 5,
+    noUserRatings: 30,
+    discount: 0,
+    tag: "new",
+    category: 7,
+    discountType: null,
+    price: 180,
+  },
+  {
+    id: 351912,
+    name: "Quilted Satin Jacket",
+    image: jacket,
+    rating: 5,
+    noUserRatings: 75,
+    discount: 0,
+    tag: null,
+    category: 7,
+    discountType: null,
+    price: 600,
   },
 ];

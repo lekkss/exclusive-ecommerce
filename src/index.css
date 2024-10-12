@@ -3,5 +3,54 @@
 @tailwind utilities;
 
 body {
+  margin: 0;
+  position: relative;
   font-family: "Inter", sans-serif;
+}
+
+/* Slider Dots Styles */
+.custom-dots {
+  bottom: 20px;
+  /* Position the dots */
+  display: flex !important;
+  /* Make dots flex container */
+  justify-content: center;
+  /* Center the dots */
+  align-items: center;
+  /* Center vertically */
+  position: absolute;
+  /* Overlay on the slider */
+  width: 100%;
+  /* Full width of the slider */
+}
+
+.custom-dot {
+  width: 12px;
+  /* Size of the dot */
+  height: 12px;
+  /* Size of the dot */
+  border-radius: 50%;
+  /* Make it circular */
+  background: grey;
+  /* Default color for inactive dots */
+  margin: 0 5px;
+  /* Spacing between dots */
+  transition: background 0.3s, border 0.3s;
+  /* Smooth transitions */
+  border: 2px solid transparent;
+  /* Transparent border for inactive dots */
+}
+
+/* Active dot style */
+.custom-dot.slick-active {
+  background: red;
+  /* Active dot color */
+  border: 2px solid white;
+  /* White border around active dot */
+}
+
+/* Change dot color on hover (optional) */
+.custom-dot:hover {
+  background: red;
+  /* Change color on hover */
 }

@@ -7,11 +7,16 @@ type TimeLeft = {
   minutes: number;
   seconds: number;
 };
+
 type CountdownTimerProps = {
   endDate: string; // The end date of the countdown in ISO format
+  circular?: boolean; // Optional prop to control circular layout
 };
 
-const CountdownTimer: React.FC<CountdownTimerProps> = ({ endDate }) => {
+const CountdownTimer: React.FC<CountdownTimerProps> = ({
+  endDate,
+  circular = false,
+}) => {
   const calculateTimeLeft = () => {
     const difference = +new Date(endDate) - +new Date();
     let timeLeft: TimeLeft = {
@@ -48,6 +53,62 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ endDate }) => {
     return String(unit).padStart(2, "0");
   };
 
+  // Circular layout
+  if (circular) {
+    return (
+      <div className="w-fit flex gap-4 justify-center">
+        {/* Days */}
+        <div className="flex flex-col items-center">
+          <div className="w-16 h-16 bg-gray-200 rounded-full flex flex-col items-center justify-center">
+            <span className="text-xl font-semibold">
+              {formatTime(timeLeft.days)}
+            </span>
+            <Text color="black" size="xs">
+              Days
+            </Text>
+          </div>
+        </div>
+
+        {/* Hours */}
+        <div className="flex flex-col items-center">
+          <div className="w-16 h-16 bg-gray-200 rounded-full flex flex-col items-center justify-center">
+            <span className="text-xl font-semibold">
+              {formatTime(timeLeft.hours)}
+            </span>
+            <Text color="black" size="xs">
+              Hours
+            </Text>
+          </div>
+        </div>
+
+        {/* Minutes */}
+        <div className="flex flex-col items-center">
+          <div className="w-16 h-16 bg-gray-200 rounded-full flex flex-col items-center justify-center">
+            <span className="text-xl font-semibold">
+              {formatTime(timeLeft.minutes)}
+            </span>
+            <Text color="black" size="xs">
+              Minutes
+            </Text>
+          </div>
+        </div>
+
+        {/* Seconds */}
+        <div className="flex flex-col items-center">
+          <div className="w-16 h-16 bg-gray-200 rounded-full flex flex-col items-center justify-center">
+            <span className="text-xl font-semibold">
+              {formatTime(timeLeft.seconds)}
+            </span>
+            <Text color="black" size="xs">
+              Seconds
+            </Text>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Default layout with colon separators
   return (
     <div className="flex items-center gap-2">
       {/* Days */}

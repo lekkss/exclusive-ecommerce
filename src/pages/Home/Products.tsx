@@ -1,63 +1,63 @@
 import { useRef } from "react";
 import Slider from "react-slick";
-import CountdownTimer from "../../components/CountDownTimer";
-import SectionHeader from "../../components/SectionHeader";
-import { flashSales } from "../../utils/products";
-import ProductCard from "../../components/ProductCard";
 import Button from "../../components/Button";
+import ProductCard from "../../components/ProductCard";
+import SectionHeader from "../../components/SectionHeader";
+import { products } from "../../utils/products";
 
-const Todays = () => {
+const Products = () => {
   const sliderRef = useRef<Slider>(null);
   const handleNext = () => {
     sliderRef.current?.slickNext();
   };
 
-  // Function to handle previous slide
   const handlePrev = () => {
     sliderRef.current?.slickPrev();
   };
   const settings = {
-    dots: false,
-    className: "",
     infinite: true,
     speed: 500,
-    slidesToShow: 4.5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
   };
   return (
-    <div className="py-10 md:py-14 border-b">
+    <div className="py-10 md:py-14">
       <SectionHeader
-        primaryText="Today's"
-        title="Flash Sales"
+        primaryText="Our Products"
+        title="Explore Our Products"
         showArrows
         onNextClick={handleNext}
         onPrevClick={handlePrev}
-        subComponent={<CountdownTimer endDate="2024-10-20T23:59:59Z" />}
       >
         <div className="">
           <Slider ref={sliderRef} {...settings}>
-            {flashSales.map((item) => (
-              <div className="md:p-4 p-2" key={item.id}>
+            {products.map((item) => (
+              <div className="pr-2 md:pr-4" key={item.id}>
                 <ProductCard product={item} />
               </div>
             ))}
@@ -71,4 +71,4 @@ const Todays = () => {
   );
 };
 
-export default Todays;
+export default Products;
