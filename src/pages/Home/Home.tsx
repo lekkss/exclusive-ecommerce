@@ -6,6 +6,7 @@ import Products from "./Products";
 import HeroTwo from "./HeroTwo";
 import Services from "./Services";
 import ScrollToTop from "../../components/ScrollToTop";
+import NewArrivals from "./NewArrivals";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <BestSeller />
         <HeroTwo />
         <Products />
+        <NewArrivals />
         <Services />
       </div>
       <ScrollToTop />

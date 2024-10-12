@@ -18,6 +18,11 @@ import boot from "../assets/products/jr-zoom-soccer-boot.png";
 import pad from "../assets/products/gp11-shhoter-usb.png";
 import jacket from "../assets/products/quitted-satin-jacket.png";
 
+import ps5 from "../assets/products/ps5.png";
+import perfume from "../assets/products/perfume.png";
+import model from "../assets/products/model.png";
+import speakers from "../assets/products/speaker.png";
+
 import { Product } from "../components/types";
 export const flashSales: Product[] = [
   {
@@ -229,5 +234,32 @@ export const products: Product[] = [
     category: 7,
     discountType: null,
     price: 600,
+  },
+];
+
+export const newArrival = [
+  {
+    id: 14251728,
+    name: "PlayStation 5",
+    description: "Black and White version of the PS5 coming out on sale.",
+    image: ps5,
+  },
+  {
+    id: 142328,
+    name: "Women’s Collections",
+    description: "Featured woman collections that give you another vibe.",
+    image: model,
+  },
+  {
+    id: 341223,
+    name: "Speakers",
+    description: "Amazon wireless speakers",
+    image: speakers,
+  },
+  {
+    id: 999111,
+    name: "Perfume",
+    description: "GUCCI INTENSE OUD EDP",
+    image: perfume,
   },
 ];
