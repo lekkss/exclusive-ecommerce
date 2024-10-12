@@ -5,8 +5,13 @@ import Text from "../components/Text";
 import InputButton from "../components/InputButton";
 import { Icon } from "@iconify/react";
 import IconBadge from "../components/IconBadge";
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
 
 const Header = () => {
+  const cartItemsCount = useSelector((state: RootState) =>
+    state.cart.items.reduce((total, item) => total + item.quantity, 0)
+  );
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLink = [
@@ -82,7 +87,10 @@ const Header = () => {
                 />
 
                 <IconBadge icon="ic:round-favorite-border" count={2} />
-                <IconBadge icon="ic:outline-shopping-cart" count={4} />
+                <IconBadge
+                  icon="ic:outline-shopping-cart"
+                  count={cartItemsCount}
+                />
 
                 {/* Mobile Menu Toggle (Hamburger) */}
                 <div className="lg:hidden">

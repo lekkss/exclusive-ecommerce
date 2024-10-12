@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Icon } from "@iconify/react";
-import { Product } from "./types"; // Import the Product interface from your types file
+import { Product } from "./types";
+import { addToCart, removeFromCart } from "../features/Cart/cartSlice";
+import { RootState } from "../app/store";
 
 interface ProductCardProps {
   product: Product;
@@ -8,11 +11,27 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [hovered, setHovered] = useState(false);
+  const dispatch = useDispatch();
+
+  // Access cart items from Redux store
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+
+  // Check if the product is in the cart
+  const isInCart = cartItems.some((item) => item.id === product.id);
 
   const discountedPrice =
     product.discountType === "percent"
       ? (product.price - (product.price * product.discount) / 100).toFixed(2)
       : (product.price - product.discount).toFixed(2);
+
+  // Handle Add to Cart
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+  // Handle Remove from Cart
+  const handleRemoveFromCart = () => {
+    dispatch(removeFromCart({ id: product.id }));
+  };
 
   return (
     <div
@@ -59,12 +78,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className="w-1/2 h-40 object-contain"
         />
 
-        {/* Add to Cart button on hover */}
-        {hovered && (
-          <button className="absolute w-full bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm py-3 px-4 rounded-b">
-            Add to Cart
-          </button>
-        )}
+        {/* Add to Cart / Remove from Cart button on hover */}
+        {hovered &&
+          (isInCart ? (
+            <button
+              className="absolute w-full bottom-0 left-1/2 transform -translate-x-1/2 bg-pry text-white text-sm py-3 px-4 rounded-b"
+              onClick={handleRemoveFromCart}
+            >
+              Remove from Cart
+            </button>
+          ) : (
+            <button
+              className="absolute w-full bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm py-3 px-4 rounded-b"
+              onClick={handleAddToCart}
+            >
+              Add to Cart
+            </button>
+          ))}
       </div>
 
       {/* Details Section */}
@@ -77,7 +107,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="flex items-center space-x-2">
           {product.discount > 0 ? (
             <>
-              {/* Show discounted price and strike-through original price if discount exists */}
               <span className="text-pry font-semibold text-lg">
                 ${discountedPrice}
               </span>
@@ -102,7 +131,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               className="w-4 h-4 text-yellow-500"
             />
           ))}
-
           {/* Number of User Ratings */}
           <span className="text-gray-500 text-sm">
             ({product.noUserRatings})
