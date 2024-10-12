@@ -10,9 +10,9 @@ const BestSeller = () => {
         title="Best Selling Products"
         showViewAllButton
       >
-        <div className="grid grid-cols-2 md:grid-cols-4">
+        <div className="grid grid-cols-2 md:gap-4 gap-2  md:grid-cols-4">
           {bestSeller.map((item) => (
-            <div className="md:p-4 p-2" key={item.id}>
+            <div key={item.id}>
               <ProductCard product={item} />
             </div>
           ))}

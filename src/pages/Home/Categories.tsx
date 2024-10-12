@@ -83,7 +83,7 @@ const Categories = () => {
       >
         <Slider ref={sliderRef} {...settings}>
           {categories.map((item) => (
-            <div className="p-2 md:p-4" key={item.name}>
+            <div className="pr-2 md:pr-4" key={item.name}>
               <div className="border flex-col gap-6 border-gray-200 rounded aspect-auto flex items-center justify-center p-7">
                 <img src={item.icon} alt={item.name} className="w-10 h-10" />
                 <Text color="black" className="capitalize text-center">

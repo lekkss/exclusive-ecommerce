@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import Text from "../components/Text";
 import InputButton from "../components/InputButton";
@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 
 const Header = () => {
+  const navigate = useNavigate();
   const cartItemsCount = useSelector((state: RootState) =>
     state.cart.items.reduce((total, item) => total + item.quantity, 0)
   );
@@ -90,14 +91,18 @@ const Header = () => {
                   icon="mynaui:search"
                 />
 
-                <IconBadge
-                  icon="ic:round-favorite-border"
-                  count={wishlistItemsCount}
-                />
-                <IconBadge
-                  icon="ic:outline-shopping-cart"
-                  count={cartItemsCount}
-                />
+                <button onClick={() => navigate("/wishlist")}>
+                  <IconBadge
+                    icon="ic:round-favorite-border"
+                    count={wishlistItemsCount}
+                  />
+                </button>
+                <button onClick={() => navigate("/cart")}>
+                  <IconBadge
+                    icon="ic:outline-shopping-cart"
+                    count={cartItemsCount}
+                  />
+                </button>
 
                 {/* Mobile Menu Toggle (Hamburger) */}
                 <div className="lg:hidden">

@@ -27,7 +27,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   children,
 }) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-5">
       {/* Primary section header */}
       <div className="flex gap-2 items-center">
         <div className="h-8 w-4 bg-pry rounded"></div> {/* Left bar */}
@@ -85,7 +85,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       </div>
 
       {/* Render additional content passed as children */}
-      <div>{children}</div>
+      <div className="py-3">{children}</div>
     </div>
   );
 };

@@ -59,3 +59,4 @@ export default wishListSlice.reducer;
 
 // Selector to get wishlist items
 export const selectWishlistItems = (state: RootState) => state.wishlist.items;
+export const wishlistCount = (state: RootState) => state.wishlist.items.length;

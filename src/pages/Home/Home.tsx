@@ -5,7 +5,7 @@ import Categories from "./Categories";
 const Home = () => {
   return (
     <div className="">
-      <div className="container mx-auto pt-28 px-5">
+      <div className="container mx-auto py-28 px-5">
         <Todays />
         <Categories />
         <BestSeller />
