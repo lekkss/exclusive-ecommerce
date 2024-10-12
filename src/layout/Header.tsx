@@ -12,6 +12,10 @@ const Header = () => {
   const cartItemsCount = useSelector((state: RootState) =>
     state.cart.items.reduce((total, item) => total + item.quantity, 0)
   );
+
+  const wishlistItemsCount = useSelector(
+    (state: RootState) => state.wishlist.items.length
+  );
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLink = [
@@ -86,7 +90,10 @@ const Header = () => {
                   icon="mynaui:search"
                 />
 
-                <IconBadge icon="ic:round-favorite-border" count={2} />
+                <IconBadge
+                  icon="ic:round-favorite-border"
+                  count={wishlistItemsCount}
+                />
                 <IconBadge
                   icon="ic:outline-shopping-cart"
                   count={cartItemsCount}

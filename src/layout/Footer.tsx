@@ -47,10 +47,8 @@ const Footer = () => {
               </Text>
               <div className="flex flex-col gap-4 pt-5 md:pt-10">
                 {supportLink.map((item) => (
-                  <NavLink to={item.link}>
-                    <Text size="base" key={item.name}>
-                      {item.name}
-                    </Text>
+                  <NavLink to={item.link} key={item.name}>
+                    <Text size="base">{item.name}</Text>
                   </NavLink>
                 ))}
               </div>
@@ -61,10 +59,8 @@ const Footer = () => {
               </Text>
               <div className="flex flex-col gap-4 pt-5 md:pt-10">
                 {account.map((item) => (
-                  <NavLink to={item.link}>
-                    <Text size="base" key={item.name}>
-                      {item.name}
-                    </Text>
+                  <NavLink to={item.link} key={item.name}>
+                    <Text size="base">{item.name}</Text>
                   </NavLink>
                 ))}
               </div>
@@ -75,10 +71,8 @@ const Footer = () => {
               </Text>
               <div className="flex flex-col gap-4 pt-5 md:pt-10">
                 {quickLink.map((item) => (
-                  <NavLink to={item.link}>
-                    <Text size="base" key={item.name}>
-                      {item.name}
-                    </Text>
+                  <NavLink to={item.link} key={item.name}>
+                    <Text size="base">{item.name}</Text>
                   </NavLink>
                 ))}
               </div>

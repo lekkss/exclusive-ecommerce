@@ -4,6 +4,11 @@ import { Icon } from "@iconify/react";
 import { Product } from "./types";
 import { addToCart, removeFromCart } from "../features/Cart/cartSlice";
 import { RootState } from "../app/store";
+import {
+  addToWishlist,
+  removeFromWishlist,
+  selectWishlistItems,
+} from "../features/Wishlist/wishlistSlice";
 
 interface ProductCardProps {
   product: Product;
@@ -12,6 +17,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [hovered, setHovered] = useState(false);
   const dispatch = useDispatch();
+  const wishlistItems = useSelector(selectWishlistItems); // Get wishlist items from the Redux store
 
   // Access cart items from Redux store
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -32,6 +38,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart({ id: product.id }));
   };
+
+  // Handle Add to Wishlist
+  const handleWishlistToggle = () => {
+    const existingItem = wishlistItems.find((item) => item.id === product.id);
+    if (existingItem) {
+      dispatch(removeFromWishlist({ id: product.id })); // Remove from wishlist if it exists
+    } else {
+      dispatch(addToWishlist(product)); // Add to wishlist if it doesn't exist
+    }
+  };
+
+  const isInWishlist = wishlistItems.some((item) => item.id === product.id); // Check if product is in wishlist
 
   return (
     <div
@@ -57,12 +75,21 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         {/* Favorite and View icons */}
         <div className="absolute top-2 right-2 flex flex-col gap-2">
-          <div className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center">
+          {/* Wishlist Button */}
+          <button
+            className={`w-10 h-10 rounded-full flex items-center justify-center ${
+              isInWishlist ? "bg-red-500" : "bg-[#F5F5F5]"
+            } transition duration-200`}
+            onClick={handleWishlistToggle}
+          >
             <Icon
-              icon="mdi:heart-outline"
-              className="w-5 h-5 text-gray-500 cursor-pointer"
+              icon={isInWishlist ? "mdi:heart" : "mdi:heart-outline"}
+              className={`w-5 h-5 ${
+                isInWishlist ? "text-white" : "text-gray-500"
+              }`}
             />
-          </div>
+          </button>
+          {/* view icon */}
           <div className="w-10 h-10 rounded-full bg-[#F5F5F5] flex items-center justify-center">
             <Icon
               icon="mdi:eye-outline"
