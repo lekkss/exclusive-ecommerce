@@ -17,7 +17,7 @@ const WishlistPage = () => {
           </Text>
           <Button
             text="Move All To Bag"
-            className="border"
+            className="border border-black"
             color="white"
             textColor="black"
           />
@@ -39,7 +39,7 @@ const WishlistPage = () => {
           </div>
           <Button
             text="See All"
-            className="border"
+            className="border border-black"
             color="white"
             textColor="black"
           />

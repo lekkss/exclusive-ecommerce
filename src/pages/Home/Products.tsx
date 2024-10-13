@@ -16,6 +16,7 @@ const Products = () => {
   };
   const settings = {
     infinite: true,
+    arrows: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -39,7 +40,7 @@ const Products = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.5,
           slidesToScroll: 1,
         },
       },

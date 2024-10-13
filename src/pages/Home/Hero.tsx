@@ -26,6 +26,7 @@ export const Hero = () => {
   };
 
   const settings = {
+    arrows: false,
     dots: true,
     dotsClass: "slick-dots custom-dots", // Add custom class for styling
     customPaging: () => (

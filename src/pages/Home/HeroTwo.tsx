@@ -6,7 +6,7 @@ const HeroTwo = () => {
   return (
     <div>
       <div className="flex items-center justify-between bg-black p-6 md:p-16 md:px-20">
-        <div className="flex gap-10 flex-col">
+        <div className="flex gap-10 flex-col w-full md:w-fit">
           <Text
             size="base"
             weight="semibold"

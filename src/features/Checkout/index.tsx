@@ -1,7 +1,11 @@
 import Breadcrumb from "../../components/BreadCrumb";
 
-const About = () => {
-  const breadcrumbItems = [{ label: "Home", href: "/" }, { label: "About" }];
+const CheckoutPage = () => {
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Cart", href: "/cart" },
+    { label: "Checkout" },
+  ];
 
   return (
     <div>
@@ -12,4 +16,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default CheckoutPage;

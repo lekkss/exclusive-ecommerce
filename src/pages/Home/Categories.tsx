@@ -39,6 +39,7 @@ const Categories = () => {
   ];
   const settings = {
     dots: false,
+    arrows: false,
     className: "",
     infinite: true,
     speed: 500,
