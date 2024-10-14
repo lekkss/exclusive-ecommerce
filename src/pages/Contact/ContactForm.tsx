@@ -4,10 +4,10 @@ import TextAreaField from "../../components/form/TextAreaField";
 
 const ContactForm = () => {
   return (
-    <div className="p-4 rounded md:col-span-4 shadow-md">
+    <div className="p-4 md:p-8 rounded md:col-span-4 shadow-md">
       <div className="w-full">
-        <form className="flex flex-col gap-4">
-          <div className="grid md:grid-cols-3 gap-4">
+        <form className="flex flex-col gap-4 md:gap-8">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8">
             <InputField
               onChange={() => {}}
               value=""
