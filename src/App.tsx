@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Checkout from "./pages/Checkout";
+import ProductDetails from "./pages/ProductDetails";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -26,6 +27,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     )

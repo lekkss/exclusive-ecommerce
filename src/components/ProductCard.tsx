@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { Product } from "./types";
 
 import AddToWishList from "./buttons/AddToWishList";
 import AddToCart from "./buttons/AddToCart";
 import RemoveFromWishlist from "./buttons/RemoveFromWishList";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
   product: Product;
   isWishlistPage?: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
-  isWishlistPage,
-  product,
-}) => {
+const ProductCard = ({ isWishlistPage, product }: ProductCardProps) => {
+  const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
 
   const discountedPrice =
@@ -53,7 +52,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
               {/* Wishlist Button */}
               <AddToWishList product={product} />
               {/* View icon */}
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+              <div
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center"
+                onClick={() => navigate(`/product/${product.id}`)}
+              >
                 <Icon
                   icon="mdi:eye-outline"
                   className="w-5 h-5 text-gray-500 cursor-pointer"

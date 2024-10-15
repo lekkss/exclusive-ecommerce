@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="py-16 pb-20 grid md:grid-cols-2 gap-8 place-items-center">
       <div className="flex flex-col gap-8">
-        <Text color="black" className="text-6xl">
+        <Text color="black" size="4xl">
           Our Story
         </Text>
         <Text color="black">
