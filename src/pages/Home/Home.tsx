@@ -5,7 +5,6 @@ import { Hero } from "./Hero";
 import Products from "./Products";
 import HeroTwo from "./HeroTwo";
 import Services from "./Services";
-import ScrollToTop from "../../components/ScrollToTop";
 import NewArrivals from "./NewArrivals";
 
 const Home = () => {
@@ -21,7 +20,7 @@ const Home = () => {
         <NewArrivals />
         <Services />
       </div>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
     </div>
   );
 };

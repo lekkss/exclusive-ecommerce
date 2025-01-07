@@ -53,7 +53,7 @@ const Todays = () => {
         showArrows
         onNextClick={handleNext}
         onPrevClick={handlePrev}
-        subComponent={<CountdownTimer endDate="2024-10-20T23:59:59Z" />}
+        subComponent={<CountdownTimer endDate="2025-02-20T23:59:59Z" />}
       >
         <div className="">
           <Slider ref={sliderRef} {...settings}>

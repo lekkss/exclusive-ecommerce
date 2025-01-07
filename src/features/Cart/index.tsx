@@ -17,7 +17,7 @@ const CartPage = () => {
   const navigate = useNavigate();
   const cartItems = useSelector(selectCartItems);
   const totalAmount = useSelector(selectCartTotalAmount);
-  const shipping = 5; // You can adjust or calculate shipping cost as needed
+  const shipping = 5;
   const total = totalAmount + shipping;
 
   const handleQuantityChange = (id: number, type: "increase" | "decrease") => {
@@ -54,14 +54,14 @@ const CartPage = () => {
                     key={item.id}
                     className="bg-white shadow rounded my-4 border"
                   >
-                    <td className="p-4">
-                      <div className="flex items-center space-x-4">
+                    <td className="p-4 whitespace-nowrap truncate">
+                      <div className="flex items-center space-x-4 pr-5">
                         <img
                           src={item.image}
                           alt={item.name}
                           className="w-11 h-11 object-cover rounded-md"
                         />
-                        <span>{item.name}</span>
+                        <span className="">{item.name}</span>
                       </div>
                     </td>
                     <td className="p-4">${item.price.toFixed(2)}</td>
@@ -75,12 +75,15 @@ const CartPage = () => {
                         >
                           -
                         </button>
-                        <input
+                        <div className="border rounded size-10 flex items-center justify-center">
+                          {item.quantity}
+                        </div>
+                        {/* <input
                           type="number"
                           value={item.quantity}
                           readOnly
                           className="w-12 py-2 px-2 outline-none border rounded"
-                        />
+                        /> */}
                         <button
                           onClick={() =>
                             handleQuantityChange(item.id, "increase")

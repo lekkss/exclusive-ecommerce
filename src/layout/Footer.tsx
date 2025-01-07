@@ -30,7 +30,7 @@ const Footer = () => {
     <div className="bg-black">
       <div className="container mx-auto pt-20 pb-10 px-5 text-grey ">
         <div className="flex flex-col gap-28">
-          <div className="flex flex-col md:flex-row gap-10 justify-between">
+          <div className="flex flex-col lg:flex-row gap-10 justify-between">
             <div className="flex flex-col gap-4">
               <Text size="2xl" weight="bold">
                 Exclusive

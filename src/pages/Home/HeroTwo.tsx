@@ -18,7 +18,7 @@ const HeroTwo = () => {
           <Text className="text-4xl font-semibold md:text-[50px] md:leading-[60px]">
             Enhance Your <br /> Music Experience
           </Text>
-          <CountdownTimer circular endDate="2024-10-15T23:59:59Z" />
+          <CountdownTimer circular endDate="2024-11-15T23:59:59Z" />
           <Button text="Buy Now!" color="green" className="bg-green" />
         </div>
         <div className="hidden md:block">

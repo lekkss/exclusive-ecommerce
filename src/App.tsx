@@ -15,6 +15,7 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Checkout from "./pages/Checkout";
 import ProductDetails from "./pages/ProductDetails";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -32,7 +33,12 @@ function App() {
       </Route>
     )
   );
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ScrollToTop />
+    </>
+  );
 }
 
 export default App;
